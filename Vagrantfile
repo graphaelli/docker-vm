@@ -8,10 +8,6 @@ Vagrant.configure(2) do |configure|
     config.vm.network "public_network", bridge: "en0: Wi-Fi (Wireless)", use_dhcp_assigned_default_route: true
     config.vm.network "forwarded_port", guest: 2375, host: 2375, auto_correct: false, host_ip: "127.0.0.1"
   
-  #  config.vm.network "forwarded_port", guest: 5601, host: 5601, auto_correct: false, host_ip: "127.0.0.1"
-  #  config.vm.network "forwarded_port", guest: 8200, host: 8200, auto_correct: false, host_ip: "127.0.0.1"
-  #  config.vm.network "forwarded_port", guest: 9200, host: 9200, auto_correct: false, host_ip: "127.0.0.1"
-  
     config.vm.synced_folder "/Users/gil", "/Users/gil", disabled: false, :mount_options => ["ro"]
     config.disksize.size = '50GB'
   
@@ -41,10 +37,6 @@ EOF
       sudo systemctl daemon-reload
       sudo systemctl restart docker.service
    
-      # install go
-      echo "Installing go..."
-      curl -Ls https://dl.google.com/go/go1.17.1.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
-  
       echo "Installing utilities..."
       sudo apt install -y curl net-tools unzip vim
   
