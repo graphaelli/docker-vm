@@ -36,6 +36,10 @@ EOF
 '
       sudo systemctl daemon-reload
       sudo systemctl restart docker.service
+
+      echo "Installing microk8s..."
+      sudo snap install microk8s --classic
+      sudo usermod -a -G microk8s ${USER}
    
       echo "Installing utilities..."
       sudo apt install -y curl net-tools unzip vim
