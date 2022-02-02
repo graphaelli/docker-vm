@@ -43,7 +43,7 @@ EOF
    
       echo "Installing utilities..."
       sudo apt install -y curl net-tools unzip vim
-      curl -sLo /tmp/pf-host-agent.deb https://releases.prodfiler.com/release-1.0.2/pf-host-agent_1.0.2_amd64.deb
+      curl -sLo /tmp/pf-host-agent.deb https://releases.prodfiler.com/release-2.0.0/pf-host-agent_2.0.0_amd64.deb
       sudo dpkg -i /tmp/pf-host-agent.deb
   
       echo "Provisioning complete"
