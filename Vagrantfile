@@ -38,7 +38,7 @@ EOF
       sudo systemctl restart docker.service
 
       echo "Installing go..."
-      curl -Ls https://dl.google.com/go/go1.17.6.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
+      curl -Ls https://dl.google.com/go/go1.17.8.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
 
       echo "Installing microk8s..."
       sudo snap install microk8s --classic
