@@ -7,6 +7,7 @@ Vagrant.configure(2) do |configure|
     config.vm.box = "ubuntu/impish64"
     config.vm.network "public_network", bridge: "en0: Wi-Fi (Wireless)", use_dhcp_assigned_default_route: true
     config.vm.network "forwarded_port", guest: 2375, host: 2375, auto_correct: false, host_ip: "127.0.0.1"
+    config.vm.network "forwarded_port", guest: 6443, host: 6443, auto_correct: false, host_ip: "127.0.0.1"
   
     config.vm.synced_folder "/Users/gil", "/Users/gil", disabled: false, :mount_options => ["ro"]
     config.disksize.size = '50GB'
