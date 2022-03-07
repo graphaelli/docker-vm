@@ -5,8 +5,4 @@ if [ -z ${1} ]; then
   exit 1
 fi
 
-SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-D=${SCRIPTPATH}/.tunnels
-SSH_CONTROL=$D/.$1-ssh
-
-ssh -S ${SSH_CONTROL} -O exit foo
+VBoxManage controlvm "docker-vm" natpf1 delete "127.0.0.1tcp${1}"
