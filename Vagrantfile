@@ -13,6 +13,7 @@ Vagrant.configure(2) do |configure|
     config.disksize.size = '50GB'
   
     config.vm.provision "shell", inline: <<-SHELL
+      sudo hostnamectl set-hostname docker-vm
       sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
       sudo apt autoremove -y
       sudo apt update
