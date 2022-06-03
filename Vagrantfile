@@ -10,7 +10,7 @@ Vagrant.configure(2) do |configure|
     config.vm.network "forwarded_port", guest: 6443, host: 6443, auto_correct: false, host_ip: "127.0.0.1"
   
     config.vm.synced_folder "/Users/gil", "/Users/gil", disabled: false, :mount_options => ["ro"]
-    config.disksize.size = '50GB'
+    config.disksize.size = '100GB'
   
     config.vm.provision "shell", inline: <<-SHELL
       sudo hostnamectl set-hostname docker-vm
