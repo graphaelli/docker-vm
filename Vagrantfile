@@ -49,7 +49,7 @@ EOF
       echo "Installing utilities..."
       sudo apt install -y curl net-tools ntpdate unzip vim
       sudo timedatectl set-ntp true
-      curl -sLo /tmp/pf-host-agent.deb https://releases.prodfiler.com/release-2.0.0/pf-host-agent_2.0.0_amd64.deb
+      curl -sLo /tmp/pf-host-agent.deb https://releases.prodfiler.com/release-2.2.0/pf-host-agent_2.2.0_amd64.deb
       sudo dpkg -i /tmp/pf-host-agent.deb
   
       echo "Provisioning complete"
