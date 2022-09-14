@@ -42,10 +42,10 @@ EOF
       echo "Installing go..."
       curl -Ls https://dl.google.com/go/go1.18.4.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
 
-      echo "Installing microk8s..."
-      sudo snap install microk8s --classic
-      sudo usermod -a -G microk8s ${USER}
-   
+      echo "Installing k3s..."
+      curl -sfL https://get.k3s.io | sh -
+      #ssh docker-vm "sudo cat /etc/rancher/k3s/k3s.yaml" >> ~/.kube/config
+
       echo "Installing utilities..."
       sudo apt install -y curl net-tools ntpdate unzip vim
       sudo timedatectl set-ntp true
